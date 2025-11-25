@@ -1,67 +1,128 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+# TGSOKRI - Travel Booking System
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+A comprehensive airline and travel booking management system built with Laravel. This application provides an intuitive interface for managing airline schedules, flight bookings, and customer reservations.
 
-## About Laravel
+## 🛫 Features
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+### For Administrators
 
--   [Simple, fast routing engine](https://laravel.com/docs/routing).
--   [Powerful dependency injection container](https://laravel.com/docs/container).
--   Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
--   Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
--   Database agnostic [schema migrations](https://laravel.com/docs/migrations).
--   [Robust background job processing](https://laravel.com/docs/queues).
--   [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+-   **Flight Management**: Add, edit, and manage airplane information
+-   **Schedule Management**: Create and manage flight schedules
+-   **Booking Management**: View, accept, reject, and cancel customer bookings
+-   **User Management**: Manage customer and admin accounts
+-   **Dashboard**: Overview of all system activities
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+### For Customers
 
-## Learning Laravel
+-   **Flight Search**: Browse available flights by airline and schedule
+-   **Booking Management**: Book flights and manage reservations
+-   **Booking History**: View past and current bookings
+-   **Profile Management**: Update personal information and password
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## 🚀 Technologies Used
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+-   **Backend**: Laravel 8.x
+-   **Frontend**: Blade Templates with Bootstrap
+-   **Database**: MySQL
+-   **Authentication**: Laravel's built-in authentication system
 
-## Laravel Sponsors
+## 📋 Installation
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+1. Clone the repository
+2. Install dependencies: `composer install`
+3. Configure `.env` file with your database settings
+4. Import the database schema from `database/travel.sql`
+5. Run the application: `php artisan serve`
 
-### Premium Partners
+## 🔧 Database Setup
 
--   **[Vehikl](https://vehikl.com/)**
--   **[Tighten Co.](https://tighten.co)**
--   **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
--   **[64 Robots](https://64robots.com)**
--   **[Cubet Techno Labs](https://cubettech.com)**
--   **[Cyber-Duck](https://cyber-duck.co.uk)**
--   **[Many](https://www.many.co.uk)**
--   **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
--   **[DevSquad](https://devsquad.com)**
--   **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
--   **[OP.GG](https://op.gg)**
--   **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
--   **[Lendio](https://lendio.com)**
+### Using Navicat/MySQL Workbench
 
-## Contributing
+1. Create database named `travel` (or your preferred name)
+2. Import `database/travel.sql` file
+3. Update your `.env` file with database credentials
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+### Quick SQL Commands
 
-## Code of Conduct
+```sql
+-- Create database
+CREATE DATABASE travel;
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+-- Import the SQL file or run the setup scripts provided
+```
 
-## Security Vulnerabilities
+## 🔑 Admin Login
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+<details>
+<summary><strong>👤 Click to reveal Admin Credentials</strong></summary>
 
-## License
+| Field               | Value                        |
+| ------------------- | ---------------------------- |
+| **Username**        | `admin`                      |
+| **Password**        | `okri123`                    |
+| **Login URL**       | `/admin.php` or `/login.php` |
+| **Admin Dashboard** | `/booking.php`               |
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+</details>
 
-Username :admin
-Password :okri123
+## 📂 Application Structure
+
+```
+├── app/Http/Controllers/
+│   ├── UserController.php      # User authentication and management
+│   ├── AirplaneController.php  # Flight management
+│   ├── BookingController.php   # Booking operations
+│   └── ScheduleAirplaneController.php # Flight scheduling
+├── database/
+│   ├── travel.sql              # Database schema and sample data
+│   └── migrations/             # Laravel migrations
+├── resources/views/
+│   ├── admin/                  # Admin panel views
+│   └── layouts/                # Application layouts
+└── routes/web.php              # Application routes
+```
+
+## 🎯 Main Modules
+
+### 1. Flight Management
+
+-   Add/edit airline information
+-   Manage flight details (capacity, type, etc.)
+-   Track flight performance
+
+### 2. Schedule Management
+
+-   Create flight schedules
+-   Set departure and arrival times
+-   Manage recurring flights
+
+### 3. Booking System
+
+-   Customer flight booking
+-   Real-time availability checking
+-   Booking confirmation and management
+
+### 4. User Management
+
+-   Admin and customer roles
+-   User registration and authentication
+-   Profile management
+
+## 🔐 Security Features
+
+-   Role-based access control (Admin/Customer)
+-   Password encryption using MD5 hashing
+-   Session-based authentication
+-   Input validation and sanitization
+
+## 🌐 Access URLs
+
+-   **Home Page**: `/`
+-   **Admin Login**: `/admin.php` or `/login.php`
+-   **Customer Registration**: `/register.php`
+-   **Admin Dashboard**: `/booking.php` (requires admin login)
+-   **Customer Bookings**: `/booking_customer_form.php` (requires customer login)
+-   **Booking History**: `/history.php` (customers only)
+-   **Password Change**: `/changePassword.php` (requires login)
+
+**Note**: This is a custom travel booking system built on Laravel framework, not a standard Laravel application template.
